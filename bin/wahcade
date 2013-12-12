@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# get rid of mouse :-)
+xdotool mousemove 1920 1080
+
+# launch wahcade
+cd /usr/local/share/games/wahcade/devel/
+./wahcade.py
+

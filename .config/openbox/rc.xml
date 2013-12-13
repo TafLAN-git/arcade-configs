@@ -207,6 +207,11 @@
         <command>bash ~/bin/volume.sh u</command>
       </action>
     </keybind>
+    <keybind key="F12">
+      <action name="Execute">
+        <command>bash ~/bin/toggle-controllers.sh</command>
+      </action>
+    </keybind>
     <keybind key="KP_Subtract">
       <action name="Execute">
         <command>bash ~/bin/volume.sh d</command>

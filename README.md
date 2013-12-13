@@ -36,5 +36,5 @@ arcade machine, it meant that it was possible to restart wahcade while an
 emulator was running, which then left the emulator running in the background
 with no way to close it. So as a temporary fix, the script also kills any
 emulators installed on the machine to make sure they aren't left running in the
-background. (Read: do this in a better way or please add any new emulators to
-the appropriate lines in the script also!).
+background. (Read: do this in a better way or please put any new emulators that
+you add to the appropriate lines in the script also!).

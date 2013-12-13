@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( bin/ .config .dolphin-gc .dolphin-gcwii .dolphin-wii .fceux .pcsx .wahcade .zsnes )
+FILES=( bin/ .config .dolphin-gc .dolphin-gcwii .dolphin-wiisideways .dolphin-wiinunchuk .fceux .pcsx .wahcade .zsnes )
 
 # symlink these directories
 DIRS=()

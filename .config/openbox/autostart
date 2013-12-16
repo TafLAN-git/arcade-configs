@@ -1,2 +1,2 @@
-xautolock -time 15 -locker "sudo /usr/bin/sleep.sh" &
+xautolock -detectsleep -time 15 -locker "sudo /usr/bin/sleep.sh" &
 wahcade &

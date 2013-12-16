@@ -4,6 +4,7 @@
 xdotool mousemove 1920 1080
 
 # launch wahcade
-cd /usr/local/share/games/wahcade/devel/
+#cd /usr/local/share/games/wahcade/devel/
+cd $HOME/wahcade-devel/
 ./wahcade.py
 

@@ -6,10 +6,12 @@ if [[ $external_controllers == 0 ]]; then
 	~/arcade-configs/external-controller-symlink.sh 1
 	echo 1 > ~/controller_state
 	killall -9 python dolphin-emu fceux zsnes pcsx vba vbam dgen mupen64plus mame # TODO: pids! groups?
+	sleep 1
 	wahcade &
 else
 	~/arcade-configs/external-controller-symlink.sh 0
 	echo 0 > ~/controller_state
 	killall -9 python dolphin-emu fceux zsnes pcsx vba vbam dgen mupen64plus mame # TODO: pids! groups?
+	sleep 1
 	wahcade &
 fi

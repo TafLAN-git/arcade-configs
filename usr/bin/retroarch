@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# start retroarch in the correct directory
-
-cd /home/taflan/src/RetroArch
-/usr/bin/retroarch-bin "$@"

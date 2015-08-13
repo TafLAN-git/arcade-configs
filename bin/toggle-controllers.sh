@@ -2,12 +2,12 @@
 
 if [[ $1 == 'xbox360' ]]; then
     # enable external controllers
-	~/arcade-configs/external-controller-symlink.sh 1
+	bash ~/arcade-configs/external-controller-symlink.sh 1
 	killall -9 python2 retroarch dolphin-emu
 	DISPLAY=:0 wahcade &
 else
     # enable arcade controllers
-	~/arcade-configs/external-controller-symlink.sh 0
+	bash ~/arcade-configs/external-controller-symlink.sh 0
 	killall -9 python2 retroarch dolphin-emu
 	DISPLAY=:0 wahcade &
 fi

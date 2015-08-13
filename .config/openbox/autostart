@@ -1,6 +1,4 @@
 #!/bin/bash
-#xset -dpms
-#xset s noblank
 feh --bg-fill ~/dead.png
 
 # enable arcade controllers by default at boot

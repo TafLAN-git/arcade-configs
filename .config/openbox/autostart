@@ -1,3 +1,10 @@
-xset -dpms
-xset s noblank
+#!/bin/bash
+#xset -dpms
+#xset s noblank
+feh --bg-fill ~/dead.png
+
+# enable arcade controllers by default at boot
+bash /home/taflan/arcade-configs/external-controller-symlink.sh 0
+echo 0 >! /home/taflan/controller_state
+
 wahcade &

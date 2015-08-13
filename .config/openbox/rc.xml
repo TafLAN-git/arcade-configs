@@ -212,6 +212,11 @@
         <command>killall -9 openbox</command>
       </action>
     </keybind>
+    <keybind key="Escape">
+      <action name="Execute">
+        <command>killall -9 dolphin-emu</command>
+      </action>
+    </keybind>
     <keybind key="KP_Subtract">
       <action name="Execute">
         <command>bash ~/bin/volume.sh d</command>

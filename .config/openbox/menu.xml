@@ -11,9 +11,9 @@
 				<execute>wahcade-setup</execute>
 			</action>
 		</item>
-        <item label="RetroArch">
+        <item label="RetroArch Configuration">
             <action name="Execute">
-                <execute>retroarch</execute>
+                <execute>retroarch-config</execute>
             </action>
         </item>
 		<item label="Terminal emulator">

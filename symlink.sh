@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # recursively symlink all files from paths in this array
-FILES=( bin/ .config .dolphin-gc .dolphin-gcwii .dolphin-wiisideways .dolphin-wiinunchuk .wahcade )
+FILES=( bin/ .config .dolphin-gc .dolphin-gcwii .dolphin-wiisideways .dolphin-wiinunchuk .local .wahcade )
 
 # cd to root of git repo
 cd "$(dirname $0)"

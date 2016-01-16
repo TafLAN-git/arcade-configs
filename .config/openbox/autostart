@@ -5,4 +5,4 @@ feh --bg-fill ~/dead.png
 bash /home/taflan/arcade-configs/external-controller-symlink.sh 0
 echo 0 >! /home/taflan/controller_state
 
-wahcade &
+emulationstation &

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#cd /usr/local/share/games/wahcade/devel/
-cd $HOME/wahcade-devel/
-python2 ./wahcade-setup.py

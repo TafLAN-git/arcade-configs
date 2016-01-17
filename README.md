@@ -1,4 +1,13 @@
 # arcade-configs
 
-This repo contains arcade-cabinet friendly configs for various emulators and
-the emulationstation frontend.
+Configfiler för arkadmaskinens emulatorer samt emulationstation frontenden
+
+## Setup:
+
+1. Klona repon till hemmakatalogen
+2. Kör ./symlink.sh skriptet
+
+## Uppdateringar:
+
+1. `git pull`
+2. `./symlink.sh`

@@ -1,5 +1,5 @@
 #!/bin/bash
-feh --bg-fill ~/dead.png
+#feh --bg-fill ~/dead.png
 
 # enable arcade controllers by default at boot
 bash /home/taflan/arcade-configs/external-controller-symlink.sh 0

@@ -1,5 +1,5 @@
 {
-  sorlag =
+  vm-sorlag =
     { config, lib, pkgs, ... }: {
       imports = [
         ./configuration.nix

@@ -58,6 +58,12 @@ Linux and macOS. Windows (with WSL) is a work in progress.
 NixOps should now fetch the required VirtualBox images and packages, boot up
 a NixOS VM for you and copy the Nix closure into the guest.
 
+**NOTE**: NixOps VirtualBox target seems to initially install an ancient
+version of NixOS. After running `nixops deploy` for the first time you might
+get errors regarding activation of services at the end of the deployment.
+Running `nixops stop` followed by another `nixops deploy -d vm-sorlag` seems to
+fix the issue by rebooting into the now upgraded NixOS installation.
+
 To deploy further changes to `configuration.nix`, run:
 
 ```

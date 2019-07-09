@@ -3,16 +3,25 @@
 let
   hostname = "sorlag";
   user = "taflan";
+
+  nixpkgs = import <nixpkgs> {};
+
+  esSystems = import ./configs/es_systems.nix { pkgs = pkgs; writeText = nixpkgs.writeText; };
 in {
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.nixos.stateVersion = "18.09"; # Did you read the comment?
+  system.stateVersion = "18.09"; # Did you read the comment?
 
   # Silent boot
   boot.consoleLogLevel = 0;
   boot.loader.timeout = pkgs.lib.mkForce 0;
+  boot.plymouth.enable = true;
+  boot.plymouth.logo = pkgs.fetchurl {
+    url = "https://taflan.tf/wp-content/uploads/2013/12/TafLAN_logo_d32.png";
+    sha256 = "54f947b2be29eb15f16c4e0079c151fe5eab9405e9a45e0d60527cecef5dd96e";
+  };
 
   # Networking
   networking.hostName = hostname;
@@ -42,9 +51,14 @@ in {
     };
   };
 
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
   # Graphics
   services.xserver = {
     enable = true;
+
+    # Drivers, tried in order from left to right
+    videoDrivers = [ "nvidia" "nouveau" "amdgpu" "intel" "vboxvideo" ];
 
     # Use libinput
     libinput.enable = true;
@@ -76,6 +90,12 @@ in {
     # }]
   };
 
+  # OpenGL support
+  hardware.opengl.enable = true;
+
+  # 32-bit OpenGL support
+  # hardware.opengl.driSupport32Bit = true;
+
   # Audio
   hardware.pulseaudio.enable = true;
 
@@ -83,6 +103,7 @@ in {
   environment.systemPackages = with pkgs; [
     emulationstation
     retroarch
+    glxinfo
   ];
 
   # Retroarch cores to enable
@@ -92,32 +113,39 @@ in {
   #
   # enableXXXX attribute found in:
   # https://nixos.org/releases/tmp/release-nixos-unstable-small/nixos-18.09pre146360.75942f96b3f/unpack/nixos-18.09pre146360.75942f96b3f/pkgs/top-level/all-packages.nix
-  nixpkgs.config.retroarch = {
+  #nixpkgs.config.retroarch = {
     # Playstation core
-    enableBeetlePSX = true;
+    #enableBeetlePSX = true;
 
     # Super Nintendo Entertainment System core
-    enableBsnesMercury = true;
+    #enableBsnesMercury = true;
 
     # Wii / GameCube core
     #enableDolphin = true;
 
     # Nintendo Entertainment System core
-    enableFceumm = true;
+    #enableFceumm = true;
 
     # Game Boy / Game Boy Color core
-    enableGambatte = true;
+    #enableGambatte = true;
 
     # Genesis core
-    enableGenesisPlusGX = true;
+    #enableGenesisPlusGX = true;
 
     # Arcade core
-    enableMAME = true;
+    #enableMAME = true;
 
     # Game Boy Advance core
-    enableMGBA = true;
+    #enableMGBA = true;
 
     # Nintendo 64 core
-    enableMupen64Plus = true;
-  };
+    #enableMupen64Plus = true;
+  #};
+
+  # Symlink dotfiles
+  system.activationScripts.dotfiles = ''
+    ${pkgs.coreutils}/bin/mkdir -p /home/${user}/.emulationstation
+    ${pkgs.coreutils}/bin/ln -sf ${esSystems} /home/${user}/.emulationstation/es_systems.cfg
+  '';
+
 }

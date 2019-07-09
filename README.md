@@ -64,13 +64,29 @@ get errors regarding activation of services at the end of the deployment.
 Running `nixops stop` followed by another `nixops deploy -d vm-sorlag` seems to
 fix the issue by rebooting into the now upgraded NixOS installation.
 
-To deploy further changes to `configuration.nix`, run:
+## Useful commands for development
 
-```
-nixops deploy -d vm-sorlag
-```
+- To deploy further changes to `configuration.nix`, run:
 
-NixOps will figure out the necessary changes, and only deploy those.
+    ```
+    nixops deploy -d vm-sorlag
+    ```
+
+  NixOps will figure out the necessary changes, and only deploy those.
+
+- You can inspect the running instance with SSH using:
+
+    ```
+    nixops ssh vm-sorlag
+    ```
+
+- Stop the VM cleanly with:
+
+    ```
+    nixops stop
+    ```
+
+  You can use the deploy command to start the VM again later.
 
 ## Deployment
 
